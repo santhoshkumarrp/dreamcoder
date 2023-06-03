@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe button</title>
+</head>
+<body>
+    <p>YouTube Subscribe Button</p>
+    <button class="js-button" onclick="
+        subscribe();
+    ">Subscribe</button>
+    <p>Amazon Tax Calculator</p>
+    <input placeholder="Enter the cost" class="js-cost" onkeydown="
+      enterKey(event);
+    ">
+    <button onclick="
+        taxCalculator();
+    ">calculate</button>
+    <p class="js-totalCost"></p>
+    <script>
+        function enterKey(Event){
+          if(event.key==='Enter'){
+            taxCalculator();
+          }
+        }
+        function taxCalculator(){
+            let cost=document.querySelector('.js-cost').value;
+            cost=Number(cost);
+            if(cost<40){
+            cost+=10;
+        }
+        document.querySelector('.js-totalCost').innerHTML=`$${cost}`;
+    }
+        function subscribe()
+        {
+        const subButtonFuction=document.querySelector('.js-button');
+            if(subButtonFuction.innerText==='Subscribe'){
+                subButtonFuction.innerHTML='Subscribed';
+            }
+            else{
+                subButtonFuction.innerHTML='Subscribe';
+            }
+        }
+    </script>
+</body>
+</html>

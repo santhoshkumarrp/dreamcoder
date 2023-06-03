@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <title>Stone Paper Scissor</title>
+      <link rel="stylesheet" href="css/mystyle.css">
+      <script src="script/script.js"></script>
+    </head>
+    <body>
+      <p class="tittle">Stone Paper Scissor</p>
+      <section class="section1">
+       <button onclick="
+         const result=computerMove();
+         decisionMaking('Stone',result);
+       " class="move-button"><img src="images/stone-emoji.png" class="move-icon"></button>
+       <button onclick="
+          result=computerMove();
+         decisionMaking('Paper',result);
+       " class="move-button"><img src="images/paper-emoji.png" class="move-icon"></button>
+       <button onclick="
+       result =computerMove();
+        decisionMaking('Scissor',result);
+       " class="move-button"><img src="images/scissors-emoji.png" class="move-icon"></button>
+      </section>
+       <p class="js-result result"></p>
+       <p class="js-moves moves"></p>
+       <p class="js-score score"></p>
+       <button onclick="
+        score.loses=0;
+        score.wins=0;
+        score.ties=0;
+        localStorage.removeItem('score');
+        document.querySelector('.js-score').innerHTML = `Wins:${score.wins}, Loses:${score.loses}, Ties:${score.ties}`;
+       " class="reset-button">Reset Score</button>
+    </body>
+</html>
